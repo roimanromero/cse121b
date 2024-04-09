@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder App - Filter</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <header>
+        <h1>Recipe Finder App - Filter</h1>
+        <select id="dietaryRestrictions">
+            <option value="none">None</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="glutenFree">Gluten Free</option>
+            <option value="dairyFree">Dairy Free</option>
+        </select>
+        <button onclick="filterRecipes()">Apply Filter</button>
+        <a href="index.html">Back to Search</a>
+    </header>
+    <main id="filteredRecipesContainer"></main>
+    <script src="project.js"></script>
+</body>
+</html>
