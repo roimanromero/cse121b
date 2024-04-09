@@ -1,0 +1,7 @@
+Recipe Finder App:
+
+Integrate with a recipe API (e.g., Spoonacular API) to fetch recipes based on user input (e.g., ingredients or dish name).
+Display recipes along with ingredients and instructions.
+Allow users to filter recipes based on dietary restrictions or preferences.
+Use conditional branching to handle cases where no recipes are found for the given input.
+Utilize template literals for dynamically rendering recipe information.
