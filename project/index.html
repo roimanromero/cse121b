@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Finder App</title>
+    <title>Random Recipe</title>
     <link rel="stylesheet" href="project.css">
 </head>
 <body>
-    <header>
-        <h1>Recipe Finder App</h1>
-        <input type="text" id="searchInput" placeholder="Enter ingredients or dish name">
-        <button onclick="searchRecipes()">Search</button>
-        <a href="filter.html">Filter Recipes</a>
-    </header>
-    <main id="recipesContainer"></main>
+    <div id="recipe-container">
+        <h1>Random Recipe</h1>
+        <button id="fetch-recipe-btn">Get Recipe</button>
+        <div id="recipe-details">
+            <h2 id="recipe-name"></h2>
+            <p id="recipe-ingredients"></p>
+            <p id="recipe-instructions"></p>
+        </div>
+    </div>
+    
     <script src="project.js"></script>
 </body>
 </html>

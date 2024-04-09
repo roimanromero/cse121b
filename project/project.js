@@ -1,35 +1,26 @@
-const API_KEY = '1';
+document.addEventListener("DOMContentLoaded", () => {
+    const fetchRecipeBtn = document.getElementById("fetch-recipe-btn");
+    const recipeNameElement = document.getElementById("recipe-name");
+    const recipeIngredientsElement = document.getElementById("recipe-ingredients");
+    const recipeInstructionsElement = document.getElementById("recipe-instructions");
 
-async function searchMeals() {
-    const searchInput = document.getElementById('searchInput').value;
-    const mealsContainer = document.getElementById('mealsContainer');
-    
-    // Clear previous search results
-    mealsContainer.innerHTML = '';
-    
-    try {
-        const response = await fetch(`https://www.themealdb.com/api/json/v1/${API_KEY}/search.php?s=${searchInput}`);
-        const data = await response.json();
-        
-        if (!data.meals) {
-            mealsContainer.innerHTML = '<p>No meals found. Please try again.</p>';
-            return;
+    const apiKey = "05f2a7c1652b4ba28e3a386d6a1ab30c"; // Replace with your Spoonacular API key
+
+    // Fetch a random recipe
+    const fetchRecipe = async () => {
+        try {
+            const response = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}`);
+            const data = await response.json();
+            const recipe = data.recipes[0];
+            
+            // Display recipe details
+            recipeNameElement.textContent = recipe.title;
+            recipeIngredientsElement.textContent = `Ingredients: ${recipe.extendedIngredients.map(ingredient => ingredient.original).join(', ')}`;
+            recipeInstructionsElement.textContent = `Instructions: ${recipe.instructions}`;
+        } catch (error) {
+            console.error("Error fetching recipe:", error);
         }
-        
-        data.meals.forEach(meal => {
-            const mealHTML = `
-                <div class="meal">
-                    <h2>${meal.strMeal}</h2>
-                    <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
-                    <p>Category: ${meal.strCategory}</p>
-                    <p>Area: ${meal.strArea}</p>
-                    <p>Instructions: ${meal.strInstructions}</p>
-                </div>
-            `;
-            mealsContainer.innerHTML += mealHTML;
-        });
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        mealsContainer.innerHTML = '<p>An error occurred. Please try again later.</p>';
-    }
-}
+    };
+
+    fetchRecipeBtn.addEventListener("click", fetchRecipe);
+});

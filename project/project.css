@@ -1,82 +1,53 @@
-/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #FFEB3B; /* Yellow */
-    color: #333;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-header {
-    background-color: #FF9800; /* Orange */
-    padding: 20px;
+#recipe-container {
     text-align: center;
+    background-color: #fffbf0; /* Light yellow */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    margin: 0;
-}
-
-input[type="text"],
-select {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    margin-right: 10px;
+    color: #ff5733; /* Light orange */
 }
 
 button {
-    padding: 10px 20px;
-    border-radius: 5px;
+    background-color: #ffdb58; /* Light yellow */
+    color: #ff5733; /* Light orange */
     border: none;
-    background-color: #F44336; /* Red */
-    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #D32F2F; /* Darker Red */
+    background-color: #ffd700; /* Light goldenrod yellow */
 }
 
-a {
-    color: #4CAF50; /* Green */
-    text-decoration: none;
-    margin-left: 10px;
+#recipe-details {
+    margin-top: 20px;
+    text-align: left;
 }
 
-a:hover {
-    text-decoration: underline;
+#recipe-name {
+    color: #ff5733; /* Light orange */
+    margin-bottom: 10px;
 }
 
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
-
-/* Recipe Styles */
-.recipe {
-    background-color: #FFC107; /* Amber */
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.recipe h2 {
-    margin-top: 0;
-}
-
-.recipe img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-.recipe p {
-    margin: 10px 0;
+#recipe-ingredients, #recipe-instructions {
+    color: #c70039; /* Light red */
+    margin-bottom: 10px;
 }
